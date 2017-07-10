@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker run \
+	--rm \
+	--net host \
+	--hostname postgres \
+	--workdir / \
+	--name postgres \
+	-e POSTGRES_PASSWORD=sigma \
+	-e POSTGRES_USER=sigma \
+	-e POSTGRES_DB=dtect_admin \
+	postgres:9.6.3-alpine

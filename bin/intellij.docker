@@ -1,0 +1,13 @@
+docker run \
+	--user sstanf \
+	--rm \
+	--net host \
+	-v /home/sstanf/work/:/home/sstanf/work/ \
+	-v /data/sstanf/jdk8_home/:/home/sstanf/ \
+	-v /tmp/.X11-unix:/tmp/.X11-unix \
+	-e DISPLAY=unix$DISPLAY \
+	--cap-drop all \
+	--name intellij \
+	sstanf/intellij \
+	/sbin/idea.sh
+

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+docker run -it \
+	--rm \
+	--net host \
+	--hostname ANDROID-DEV \
+	--workdir /home/sstanf \
+	-v /dev/bus/usb:/dev/bus/usb \
+	-v /tmp/.X11-unix:/tmp/.X11-unix \
+	-e DISPLAY=unix$DISPLAY \
+	-v /home/sstanf/work/:/home/sstanf/work/ \
+	-v /data/sstanf/android-home/:/home/sstanf/ \
+	-v /home/sstanf/android-sdk-linux/:/home/sstanf/android-sdk-linux/ \
+	--group-add $(getent group adbusers | cut -d: -f3) \
+	--privileged \
+	--user sstanf \
+	--name android_dev \
+	sstanf/jdk8 \
+	/bin/bash
+

@@ -1,0 +1,7 @@
+Personal docker images.
+These are based on Arch linux using a base image bootstapped local (should be able to replace with official image).
+Probably only useful for reference, some specific stuff in them (especially in the start scripts in ./bin).
+
+Initial dockers/inpiration taken from Jessie Frazelle's dockers: https://github.com/jessfraz/dockerfiles
+If you are looking for something that is probably a better source...
+If you are an Arch Linux user and want Arch based images these might be useful.
