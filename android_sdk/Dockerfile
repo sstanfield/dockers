@@ -8,9 +8,10 @@ COPY ./sdk.list /
 
 RUN pacman --noconfirm -Suy && \
     pacman --noconfirm -S git unzip wget cmake expect && \
-    rm -f /var/cache/pacman/pkg/* && \
-    #wget https://dl.google.com/android/repository/sdk-tools-linux-$_build.zip && \
-    mkdir sdk && \
+    rm -f /var/cache/pacman/pkg/*
+
+#RUN #wget https://dl.google.com/android/repository/sdk-tools-linux-$_build.zip && \
+RUN mkdir sdk && \
     cd sdk && \
     unzip ../sdk-tools-linux-$_build.zip && \
     rm /sdk-tools-linux-$_build.zip && \

@@ -7,7 +7,8 @@ docker run \
 	-v /data/sstanf/android_sdk_home/:/home/sstanf/ \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-e DISPLAY=unix$DISPLAY \
-	--cap-drop all \
+	-v /dev/bus/usb:/dev/bus/usb \
+	--privileged \
 	--name android_sdk \
 	sstanf/android_sdk \
 	/bin/bash
