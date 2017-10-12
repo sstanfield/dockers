@@ -3,14 +3,14 @@ LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
 ENV _build 3859397
 
-COPY ./sdk-tools-linux-$_build.zip /
+#COPY ./sdk-tools-linux-$_build.zip /
 COPY ./sdk.list /
 
 RUN pacman --noconfirm -Suy && \
     pacman --noconfirm -S git unzip wget cmake expect && \
     rm -f /var/cache/pacman/pkg/*
 
-#RUN #wget https://dl.google.com/android/repository/sdk-tools-linux-$_build.zip && \
+RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$_build.zip
 RUN mkdir sdk && \
     cd sdk && \
     unzip ../sdk-tools-linux-$_build.zip && \
