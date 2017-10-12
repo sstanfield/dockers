@@ -2,7 +2,7 @@ FROM sstanf/archlinux
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
 RUN pacman --noconfirm -Suy && \
-    pacman --noconfirm -S jdk8-openjdk git && \
+    pacman --noconfirm -S jdk8-openjdk git zip unzip openssh && \
     rm -f /var/cache/pacman/pkg/*
 
 ENV LANG en-US

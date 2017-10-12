@@ -1,13 +1,19 @@
 #!/bin/bash
 
+export VOLUMES="-v /home/sstanf/work/:/home/sstanf/work/ -v /data/sstanf/jdk8_home/:/home/sstanf/"
+
+if [ -n $SSH_AUTH_SOCK ]; then
+	export VOLUMES="$VOLUMES -v $SSH_AUTH_SOCK:/.ssh.agent"
+fi
+
 docker run -it \
 	--user sstanf \
 	--rm \
 	--net host \
 	--hostname JDK8-DEV \
 	--workdir /home/sstanf \
-	-v /home/sstanf/work/:/home/sstanf/work/ \
-	-v /data/sstanf/jdk8_home/:/home/sstanf/ \
+	-e SSH_AUTH_SOCK=/.ssh.agent \
+	$VOLUMES \
 	--name jdk8_dev \
 	sstanf/jdk8 \
 	/bin/bash
