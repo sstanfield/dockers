@@ -9,9 +9,9 @@ RUN apt-get install -y subsurface
 ENV LANG en-US.UTF-8
 
 # Add browser user
-RUN groupadd -g 1000 -r sstanf && useradd -u 1000 -r -g sstanf -G audio,video sstanf \
+RUN groupadd -g 1000 -r sstanf && useradd -u 1000 -r -g sstanf sstanf \
 && mkdir -p /home/sstanf && chown -R sstanf:sstanf /home/sstanf
 
 USER sstanf
 
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT [ "/usr/bin/subsurface" ]

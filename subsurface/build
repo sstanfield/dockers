@@ -1,1 +1,1 @@
-docker build --rm --network host -t sstanf/subsurface2 .
+docker build --rm --network host -t sstanf/subsurface .
