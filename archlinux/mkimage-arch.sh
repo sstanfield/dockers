@@ -69,7 +69,8 @@ case "$arch" in
 		;;
 	*)
 		PACMAN_CONF='./mkimage-arch-pacman.conf'
-		PACMAN_MIRRORLIST='Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch'
+		#PACMAN_MIRRORLIST='Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch'
+		PACMAN_MIRRORLIST='Server = http://archon:8081/archlinux/$repo/os/$arch'
 		PACMAN_EXTRA_PKGS='sed which grep tmux neovim'
 		EXPECT_TIMEOUT=60
 		ARCH_KEYRING=archlinux
