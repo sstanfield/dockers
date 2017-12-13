@@ -7,3 +7,4 @@ RUN pacman --noconfirm -Suy && \
 
 ENV LANG en-US
 
+ENTRYPOINT exec /sbin/idea.sh

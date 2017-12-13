@@ -1,4 +1,4 @@
-FROM sstanf/jdk8
+FROM sstanf/base_devel
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
 ENV _build 3859397
@@ -6,13 +6,17 @@ ENV _build 3859397
 #COPY ./sdk-tools-linux-$_build.zip /
 COPY ./sdk.list /
 
-RUN pacman --noconfirm -Suy && \
-    pacman --noconfirm -S git unzip wget cmake expect && \
+# Need lib32stdc++6 or some damn 32 bit lib, for ubuntu "apt-get install lib32stdc++6" might do the trick...
+RUN echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf && \
+    echo "[multilib]" >> /etc/pacman.conf && \
+    echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf && \
+    pacman --noconfirm -Suy && \
+    pacman --noconfirm -S unzip wget expect lib32-gcc-libs lib32-zlib && \
     rm -f /var/cache/pacman/pkg/*
 
-RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$_build.zip
-RUN mkdir sdk && \
-    cd sdk && \
+RUN cd / && wget https://dl.google.com/android/repository/sdk-tools-linux-$_build.zip
+RUN mkdir /sdk && \
+    cd /sdk && \
     unzip ../sdk-tools-linux-$_build.zip && \
     rm /sdk-tools-linux-$_build.zip && \
     echo -e "spawn /sdk/tools/bin/sdkmanager --package_file=/sdk.list\nexpect \"Accept? (y/N):\" {send \"y\\\\n\"}\ninteract\nwait" > /loadsdk && \
