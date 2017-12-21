@@ -7,7 +7,7 @@ docker rmi sstanf/chromium
 docker rmi sstanf/browsers
 docker rmi sstanf/intellij
 docker rmi sstanf/flutter
-docker rmi sstanf/react-native
+docker rmi sstanf/react_native
 docker rmi sstanf/android_sdk
 docker rmi sstanf/base_devel
 docker rmi sstanf/jdk8
