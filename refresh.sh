@@ -24,6 +24,6 @@ docker build --rm --network host -t sstanf/jdk8 $HOME/dockers/jdk8/
 docker build --rm --network host -t sstanf/base_devel $HOME/dockers/base_devel/
 docker build --rm --network host -t sstanf/android_sdk $HOME/dockers/android_sdk/
 docker build --rm --network host -t sstanf/flutter $HOME/dockers/flutter/
-docker build --rm --network host -t sstanf/react_native $HOME/dockers/react-native/
+docker build --rm --network host -t sstanf/react_native $HOME/dockers/react_native/
 docker build --rm --network host -t sstanf/intellij $HOME/dockers/intelliJ/
 #docker build --rm --network host -t sstanf/flutter_website $HOME/dockers/flutter_website/
