@@ -5,7 +5,7 @@ ENV _name firefox
 ENV _channel developer
 ENV _srcurl "https://download-installer.cdn.mozilla.net/pub/devedition/releases"
 ENV _locale "en-US"
-ENV pkgver 58.0b11
+ENV pkgver 58.0b13
 #ENV pkgver 57.0b14
 ENV CARCH x86_64
 
