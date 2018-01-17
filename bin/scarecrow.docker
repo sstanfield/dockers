@@ -5,7 +5,7 @@ if [ x"$(pax11publish -d)" = x ]; then
 	start-pulseaudio-x11
 fi
 docker run --rm \
-	--net host \
+	--dns=172.17.0.1 \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /dev/shm:/dev/shm \
 	-v /etc/machine-id:/etc/machine-id:ro \

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+docker run -it \
+	--user sstanf \
+	--rm \
+	--net host \
+	--hostname JAVACPP-DEV \
+	--workdir /home/sstanf \
+	-v /data/sstanf/javacpp_home/:/home/sstanf/ \
+	--name javacpp_dev \
+	sstanf/javacpp_build \
+	/bin/bash

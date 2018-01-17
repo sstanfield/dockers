@@ -1,15 +1,14 @@
 docker run \
 	--user sstanf \
 	--rm \
-	--net host \
 	-v /home/sstanf/work/:/home/sstanf/work/ \
-	-v /data/sstanf/jdk8_home/:/home/sstanf/ \
+	-v /data/sstanf/intellijui_home/:/home/sstanf/ \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-e DISPLAY=unix$DISPLAY \
 	-e SIGMA_SUPPORT=/home/sstanf/work/sigma/support \
 	-e ANDROID_HOME=/sdk \
 	--cap-drop all \
-	--name intellij \
-	sstanf/intellij \
-	--entrypoint /sbin/idea.sh
+	--name intellij_ui \
+	sstanf/intellij_ui
 
+	#--net host \
