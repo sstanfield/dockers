@@ -1,0 +1,99 @@
+# .shrc.funcs
+# Common RC code for newer Bourne shells (ksh and bash)
+
+# Attempt to set a sane a usable PATH on multiple platforms
+function setPath
+{
+  PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+  if [[ -d /usr/X11R6/bin ]]; then
+    PATH=$PATH:/usr/X11R6/bin
+  fi
+
+  if [[ -d /usr/local ]]; then
+    PATH=$PATH:/usr/local/sbin:/usr/local/bin
+  fi
+
+  if [[ -d /usr/kerberos ]]; then
+    PATH=/usr/kerberos/sbin:/usr/kerberos/bin:$PATH
+  fi
+
+  # set PATH so it includes user's private bin if it exists
+  if [[ -d ~/bin ]] ; then
+    PATH=~/bin:$PATH
+  fi
+
+  # set PATH so it includes user's private bin if it exists
+  if [[ -d ~/scripts/bin ]] ; then
+    PATH=$PATH:~/scripts/bin
+  fi
+
+  # Try to make sure we can find git...
+  if [[ -d /opt/git ]] ; then
+    PATH=$PATH:/opt/git/bin
+  elif [[ -d ~/git ]]; then
+    PATH=$PATH:~/git/bin
+  fi
+
+  # set PATH so it includes pkgsrc if it exists (try several places).
+  if [[ -d /pkg ]] ; then
+    PATH=$PATH:/pkg/sbin:/pkg/bin
+  elif [[ -d /usr/pkg ]]; then
+    PATH=$PATH:/usr/pkg/sbin:/usr/pkg/bin
+  elif [[ -d /opt/pkg ]]; then
+    PATH=$PATH:/opt/pkg/sbin:/opt/pkg/bin
+  fi
+
+  # set PATH so it includes open if it exists (try several places).
+  if [[ -d /cw ]] ; then
+    PATH=$PATH:/cw/sbin:/cw/bin
+  elif [[ -d /usr/cw ]]; then
+    PATH=$PATH:/usr/cw/sbin:/usr/cw/bin
+  elif [[ -d /opt/cw ]]; then
+    PATH=$PATH:/opt/cw/sbin:/opt/cw/bin
+  fi
+
+  if [[ -d /usr/games ]]; then
+    PATH=$PATH:/usr/games
+  fi
+
+  if [[ -d /opt/jruby/bin ]]; then
+    PATH=$PATH:/opt/jruby/bin:~/.gem/jruby/1.8/bin
+  fi
+
+  export PATH
+}
+
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+function setShopt
+{
+  which shopt >> /dev/null 2>&1
+  if [[ $? -eq 0 ]]; then
+    shopt -s checkwinsize
+  fi
+}
+
+# Try to set colors for ls.
+function colorLS
+{
+  if [[ "$TERM" != "dumb" ]]; then
+    # Test for GNU ls.
+    ls --color=auto -F >> /dev/null 2>&1
+    if [[ $? -eq 0 ]]; then
+      eval "`dircolors -b`"
+      alias ls='ls --color=auto -F'
+    else # Is this a BSD ls...
+      ls -GF >> /dev/null 2>&1
+      if [[ $? -eq 0 ]]; then
+        alias ls='ls -GF'
+      else # See if -F by itself works...
+        ls -F >> /dev/null 2>&1
+        if [[ $? -eq 0 ]]; then
+          alias ls='ls -F'
+        fi
+      fi
+    fi
+  fi
+}
