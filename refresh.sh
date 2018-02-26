@@ -5,6 +5,7 @@ docker rmi sstanf/firefox
 docker rmi sstanf/firefox_dev
 docker rmi sstanf/chromium
 docker rmi sstanf/browsers
+docker rmi sstanf/intellij_ui
 docker rmi sstanf/intellij
 docker rmi sstanf/flutter
 docker rmi sstanf/react_native
@@ -26,4 +27,5 @@ docker build --rm --network host -t sstanf/android_sdk $HOME/dockers/android_sdk
 docker build --rm --network host -t sstanf/flutter $HOME/dockers/flutter/
 docker build --rm --network host -t sstanf/react_native $HOME/dockers/react_native/
 docker build --rm --network host -t sstanf/intellij $HOME/dockers/intelliJ/
+docker build --rm --network host -t sstanf/intellij_ui $HOME/dockers/intelliJ_UI/
 #docker build --rm --network host -t sstanf/flutter_website $HOME/dockers/flutter_website/
