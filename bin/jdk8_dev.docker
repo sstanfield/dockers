@@ -14,6 +14,7 @@ docker run -it \
 	--workdir /home/sstanf \
 	-e SSH_AUTH_SOCK=/.ssh.agent \
 	-e TERM=$TERM \
+	-e DISPLAY=unix$DISPLAY \
 	$VOLUMES \
 	--name jdk8_dev \
 	sstanf/jdk8 \
