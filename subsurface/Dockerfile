@@ -1,10 +1,9 @@
-FROM ubuntu:16.10
+FROM sstanf/browsers
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
-RUN apt-get update; apt-get upgrade
-RUN apt-get install -y software-properties-common python-software-properties; apt-add-repository ppa:subsurface/subsurface; apt-get update
-RUN apt-get install -y subsurface
-#RUN apt-get install -y subsurface=4.6.4-1~trusty
+RUN pacman --noconfirm -Suy && \
+    pacman --noconfirm -S subsurface bluez bluez-utils && \
+    rm -f /var/cache/pacman/pkg/*
 
 ENV LANG en-US.UTF-8
 
