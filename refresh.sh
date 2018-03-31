@@ -11,6 +11,7 @@ docker rmi sstanf/intellij
 docker rmi sstanf/flutter
 docker rmi sstanf/react_native
 docker rmi sstanf/android_sdk
+docker rmi sstanf/neovimgtk
 docker rmi sstanf/base_devel
 docker rmi sstanf/jdk8
 docker rmi sstanf/archlinux
@@ -30,4 +31,5 @@ docker build --rm --network host -t sstanf/flutter $HOME/dockers/flutter/
 docker build --rm --network host -t sstanf/react_native $HOME/dockers/react_native/
 docker build --rm --network host -t sstanf/intellij $HOME/dockers/intelliJ/
 docker build --rm --network host -t sstanf/intellij_ui $HOME/dockers/intelliJ_UI/
+docker build --rm --network host -t sstanf/neovimgtk $HOME/dockers/neovimgtk/
 #docker build --rm --network host -t sstanf/flutter_website $HOME/dockers/flutter_website/
