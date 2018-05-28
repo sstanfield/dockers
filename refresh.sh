@@ -6,6 +6,7 @@ docker rmi sstanf/firefox
 #docker rmi sstanf/firefox_dev
 docker rmi sstanf/chromium
 docker rmi sstanf/browsers
+docker rmi sstanf/libreoffice
 docker rmi sstanf/intellij_ui
 docker rmi sstanf/intellij
 docker rmi sstanf/flutter
@@ -32,4 +33,5 @@ docker build --rm --network host -t sstanf/react_native $HOME/dockers/react_nati
 docker build --rm --network host -t sstanf/intellij $HOME/dockers/intelliJ/
 docker build --rm --network host -t sstanf/intellij_ui $HOME/dockers/intelliJ_UI/
 docker build --rm --network host -t sstanf/neovimgtk $HOME/dockers/neovimgtk/
+docker build --rm --network host -t sstanf/libreoffice $HOME/dockers/libreoffice/
 #docker build --rm --network host -t sstanf/flutter_website $HOME/dockers/flutter_website/
