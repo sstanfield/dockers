@@ -1,11 +1,11 @@
 FROM sstanf/intellij
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
-COPY ./ideaIU-2017.3.5.tar.gz /
+COPY ./ideaIU-2018.1.4-no-jdk.tar.gz /
 
-RUN cd / && tar xvf /ideaIU-2017.3.5.tar.gz && \
-    rm -f /ideaIU-2017.3.5.tar.gz
+RUN cd / && tar xvf /ideaIU-2018.1.4-no-jdk.tar.gz && \
+    rm -f /ideaIU-2018.1.4-no-jdk.tar.gz
 
 ENV LANG en_US.UTF-8
 
-ENTRYPOINT exec /idea-IU-173.4674.33/bin/idea.sh
+ENTRYPOINT exec /idea-IU-181.5087.20/bin/idea.sh
