@@ -2,15 +2,16 @@ FROM sstanf/android_sdk
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
 RUN pacman --noconfirm -Suy && \
-    pacman --noconfirm -S nodejs npm && \
+    pacman --noconfirm -S npm python2 && \
     rm -f /var/cache/pacman/pkg/*
 
+    #pacman --noconfirm -S nodejs npm python2 && \
 RUN useradd builduser -m && \
     passwd -d builduser && \
     printf 'builduser ALL=(ALL) ALL\n' | tee -a /etc/sudoers && \
     sudo -u builduser bash -c 'cd ~ && git clone https://aur.archlinux.org/watchman.git && cd watchman && makepkg -si --noconfirm'
 
-RUN npm install -g npm@4
+RUN npm install -g npm@5
 
 RUN npm install -g create-react-native-app && \
     npm install -g react-native-cli
