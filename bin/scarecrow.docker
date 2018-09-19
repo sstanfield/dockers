@@ -6,7 +6,7 @@ if [ x"$(pax11publish -d)" = x ]; then
 fi
 docker run --rm \
 	--dns=172.17.0.1 \
-	-v /etc/localtime:/etc/localtime:ro \
+	-e TZ=America/New_York \
 	-v /dev/shm:/dev/shm \
 	-v /etc/machine-id:/etc/machine-id:ro \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \

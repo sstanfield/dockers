@@ -7,7 +7,7 @@ fi
 #docker run -it --rm \
 docker run --rm \
 	--net host \
-	-v /etc/localtime:/etc/localtime:ro \
+	-e TZ=America/New_York \
 	-v /dev/shm:/dev/shm \
 	-v /etc/machine-id:/etc/machine-id:ro \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
