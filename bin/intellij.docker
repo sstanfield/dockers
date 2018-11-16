@@ -1,3 +1,5 @@
+#!/bin/sh
+
 docker run \
 	--user sstanf \
 	--rm \
@@ -10,6 +12,6 @@ docker run \
 	-e ANDROID_HOME=/sdk \
 	--cap-drop all \
 	--name intellij \
-	sstanf/intellij \
-	--entrypoint /sbin/idea.sh
+	--entrypoint /sbin/idea \
+	sstanf/intellij
 

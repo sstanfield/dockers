@@ -18,5 +18,5 @@ docker run -it \
 	$VOLUMES \
 	--name jdk8_dev \
 	sstanf/jdk8 \
-	/bin/bash
+	/usr/bin/tmux
 
