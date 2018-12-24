@@ -1,0 +1,18 @@
+#!/bin/sh
+
+docker run \
+	--user sstanf \
+	--rm \
+	-v /home/sstanf/work/:/home/sstanf/work/ \
+	-v /data/sstanf/vscode_home/:/home/sstanf/ \
+	-v /tmp/.X11-unix:/tmp/.X11-unix \
+	-e DISPLAY=unix$DISPLAY \
+	-e SIGMA_SUPPORT=/home/sstanf/work/sigma/support \
+	-e ANDROID_HOME=/sdk \
+	--ipc host \
+	--cap-drop all \
+	--name vscode \
+	--entrypoint "" \
+	sstanf/vscode \
+	/usr/bin/electron2 /usr/lib/code/out/cli.js /usr/lib/code/code.js \
+
