@@ -19,6 +19,10 @@ RUN echo "export PATH=/flutter/bin:$PATH" >> /home/sstanf/.local && \
     echo "flutter config --gradle-dir=/gradle-3.5.1" >> /home/sstanf/.local && \
     echo ". /home/sstanf/.local" >> /home/sstanf/.bashrc
 
+RUN pacman --noconfirm -Suy && \
+    pacman --noconfirm -S ttf-inconsolata code && \
+    rm -f /var/cache/pacman/pkg/*
+
 ENV LANG en-US
 
 # Add sstanf user
