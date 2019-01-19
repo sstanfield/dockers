@@ -1,0 +1,35 @@
+let USER=$(whoami)
+#let PROMPT="${x::1B}]0;${USER}: ${PWD}${x::07}${c::0x55,bold}${USER}${c::default}:${c::0x4B}${SWD}${c::default}# ${c::reset}"
+
+set -o inc_append_history
+set -o share_history
+
+export COMPLETE_CASESENSITIVE=0
+
+export PATH=~/bin:$PATH
+
+fn parse_git_branch
+  let branch = $(git rev-parse --abbrev-ref HEAD ^> /dev/null)
+  if test "${branch}" = ""
+    echo -n ""
+  else
+    echo -n "(${branch})"
+  end
+end
+
+fn PROMPT
+  let branch="$(parse_git_branch)"
+  echo -n "${c::green}${HOST}${c::default}:${c::blue}${MWD}/${c::white,bold}${branch}${c::reset}${c::green}> ${c::reset}"
+end
+
+fn xdocker
+  xhost local:docker
+end
+
+set -o vi
+
+alias ls=ls --color=auto -F
+alias ll=ls -al --color=auto -F
+alias vi=nvim
+alias vim=nvim
+
