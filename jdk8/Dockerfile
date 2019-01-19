@@ -7,6 +7,8 @@ RUN pacman --noconfirm -Suy && \
     pacman --noconfirm -S libxrender libxtst freetype2 fontconfig noto-fonts && \
     rm -f /var/cache/pacman/pkg/*
 
+RUN pacman --noconfirm -S audit
+
 ENV LANG en-US
 
 # Add sstanf user
