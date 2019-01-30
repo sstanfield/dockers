@@ -4,7 +4,7 @@ LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 #COPY mirrorlist /etc/pacman.d/
 
 RUN pacman --noconfirm -Suy && \
-    pacman --noconfirm -S python2 python2-virtualenv docker && \
+    pacman --noconfirm -S python2 python2-virtualenv docker tk && \
     rm -f /var/cache/pacman/pkg/*
 
 

@@ -15,7 +15,7 @@ docker rmi sstanf/flutter
 docker rmi sstanf/react_native
 docker rmi sstanf/android_sdk
 docker rmi sstanf/neovimgtk
-docker rmi sstanf/protocol_devel
+docker rmi sstanf/sigma_devel
 docker rmi sstanf/base_devel
 docker rmi sstanf/jdk8
 docker rmi sstanf/archlinux
@@ -30,7 +30,7 @@ docker build --rm --network host -t sstanf/firefox $HOME/dockers/firefox/
 docker build --rm --network host -t sstanf/subsurface $HOME/dockers/subsurface/
 docker build --rm --network host -t sstanf/jdk8 $HOME/dockers/jdk8/
 docker build --rm --network host -t sstanf/base_devel $HOME/dockers/base_devel/
-docker build --rm --network host -t sstanf/protocol_devel $HOME/dockers/protocol_devel/
+docker build --rm --network host -t sstanf/protocol_devel $HOME/dockers/sigma_devel/
 docker build --rm --network host -t sstanf/android_sdk $HOME/dockers/android_sdk/
 docker build --rm --network host -t sstanf/flutter $HOME/dockers/flutter/
 docker build --rm --network host -t sstanf/react_native $HOME/dockers/react_native/
