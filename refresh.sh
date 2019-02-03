@@ -22,7 +22,8 @@ docker rmi sstanf/archlinux
 
 #docker pull base/archlinux
 cd $HOME/dockers
-cd archlinux && sudo ./mkimage-arch.sh && cd ..
+#cd archlinux && sudo ./mkimage-arch.sh && cd ..
+docker build --rm --network host -t sstanf/archlinux $HOME/dockers/archlinux/
 docker build --rm --network host -t sstanf/browsers $HOME/dockers/browsers/
 docker build --rm --network host -t sstanf/chromium $HOME/dockers/chromium/
 docker build --rm --network host -t sstanf/firefox $HOME/dockers/firefox/
@@ -30,7 +31,7 @@ docker build --rm --network host -t sstanf/firefox $HOME/dockers/firefox/
 docker build --rm --network host -t sstanf/subsurface $HOME/dockers/subsurface/
 docker build --rm --network host -t sstanf/jdk8 $HOME/dockers/jdk8/
 docker build --rm --network host -t sstanf/base_devel $HOME/dockers/base_devel/
-docker build --rm --network host -t sstanf/protocol_devel $HOME/dockers/sigma_devel/
+docker build --rm --network host -t sstanf/sigma_devel $HOME/dockers/sigma_devel/
 docker build --rm --network host -t sstanf/android_sdk $HOME/dockers/android_sdk/
 docker build --rm --network host -t sstanf/flutter $HOME/dockers/flutter/
 docker build --rm --network host -t sstanf/react_native $HOME/dockers/react_native/
