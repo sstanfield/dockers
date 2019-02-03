@@ -22,8 +22,9 @@ RUN mkdir /sdk && \
     unzip ../sdk-tools-linux-$_build.zip && \
     rm /sdk-tools-linux-$_build.zip && \
     /sdk/tools/bin/sdkmanager --verbose --update && \
-	echo -e "spawn /sdk/tools/bin/sdkmanager --verbose \"extras;google;m2repository\"\nexpect \"Accept? (y/N):\" {send \"y\\\\r\\\\n\"}\ninteract\nwait" > /loadsdk && \
-    expect /loadsdk && \
+    echo y | /sdk/tools/bin/sdkmanager --verbose "extras;google;m2repository" && \
+    #echo -e "spawn /sdk/tools/bin/sdkmanager --verbose \"extras;google;m2repository\"\nexpect \"Accept? (y/N):\" {send \"y\\\\r\\\\n\"}\ninteract\nwait" > /loadsdk && \
+    #expect /loadsdk && \
     /sdk/tools/bin/sdkmanager --verbose "build-tools;28.0.3" && \
     /sdk/tools/bin/sdkmanager --verbose "build-tools;27.0.3" && \
     /sdk/tools/bin/sdkmanager --verbose "build-tools;26.0.2" && \
