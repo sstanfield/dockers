@@ -1,0 +1,1 @@
+Server = http://archon:8081/archlinux/$repo/os/$arch
