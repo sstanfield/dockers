@@ -1,4 +1,4 @@
-FROM base/archlinux
+FROM archlinux/base
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
 COPY mirrorlist /etc/pacman.d/
