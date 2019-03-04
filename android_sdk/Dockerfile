@@ -27,16 +27,11 @@ RUN mkdir /sdk && \
     #expect /loadsdk && \
     /sdk/tools/bin/sdkmanager --verbose "build-tools;28.0.3" && \
     /sdk/tools/bin/sdkmanager --verbose "build-tools;27.0.3" && \
-    /sdk/tools/bin/sdkmanager --verbose "build-tools;26.0.2" && \
-    /sdk/tools/bin/sdkmanager --verbose "build-tools;26.0.1" && \
-    /sdk/tools/bin/sdkmanager --verbose "build-tools;25.0.3" && \
-    /sdk/tools/bin/sdkmanager --verbose "build-tools;23.0.1" && \
     /sdk/tools/bin/sdkmanager --verbose "patcher;v4" && \
     /sdk/tools/bin/sdkmanager --verbose "platform-tools" && \
     /sdk/tools/bin/sdkmanager --verbose "platforms;android-27" && \
     /sdk/tools/bin/sdkmanager --verbose "platforms;android-26" && \
     /sdk/tools/bin/sdkmanager --verbose "platforms;android-25" && \
-    /sdk/tools/bin/sdkmanager --verbose "platforms;android-23" && \
     /sdk/tools/bin/sdkmanager --verbose "tools" && \
     /sdk/tools/bin/sdkmanager --verbose "extras;android;m2repository" && \
     /sdk/tools/bin/sdkmanager --verbose "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2" && \
