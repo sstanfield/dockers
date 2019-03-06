@@ -29,6 +29,7 @@ RUN mkdir /sdk && \
     /sdk/tools/bin/sdkmanager --verbose "build-tools;27.0.3" && \
     /sdk/tools/bin/sdkmanager --verbose "patcher;v4" && \
     /sdk/tools/bin/sdkmanager --verbose "platform-tools" && \
+    /sdk/tools/bin/sdkmanager --verbose "platforms;android-28" && \
     /sdk/tools/bin/sdkmanager --verbose "platforms;android-27" && \
     /sdk/tools/bin/sdkmanager --verbose "platforms;android-26" && \
     /sdk/tools/bin/sdkmanager --verbose "platforms;android-25" && \
