@@ -10,7 +10,7 @@ docker rmi sstanf/chromium
 docker rmi sstanf/eucleo
 docker rmi sstanf/browsers
 docker rmi sstanf/libreoffice
-docker rmi sstanf/intellij_ui
+#docker rmi sstanf/intellij_ui
 docker rmi sstanf/intellij
 docker rmi sstanf/flutter
 docker rmi sstanf/react_native
@@ -20,6 +20,7 @@ docker rmi sstanf/sigma_devel
 docker rmi sstanf/base_devel
 docker rmi sstanf/jdk8
 docker rmi sstanf/archlinux
+docker rmi archlinux/base
 
 #docker pull base/archlinux
 cd $HOME/dockers
@@ -38,7 +39,7 @@ docker build --rm --network host -t sstanf/android_sdk $HOME/dockers/android_sdk
 docker build --rm --network host -t sstanf/flutter $HOME/dockers/flutter/
 docker build --rm --network host -t sstanf/react_native $HOME/dockers/react_native/
 docker build --rm --network host -t sstanf/intellij $HOME/dockers/intelliJ/
-docker build --rm --network host -t sstanf/intellij_ui $HOME/dockers/intelliJ_UI/
+#docker build --rm --network host -t sstanf/intellij_ui $HOME/dockers/intelliJ_UI/
 docker build --rm --network host -t sstanf/neovimgtk $HOME/dockers/neovimgtk/
 docker build --rm --network host -t sstanf/libreoffice $HOME/dockers/libreoffice/
 docker build --rm --network host -t sstanf/node_dev $HOME/dockers/node_dev/
