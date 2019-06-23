@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #docker rmi sstanf/flutter_website
+docker rmi sstanf/xon_devel
 docker rmi sstanf/vscode
 docker rmi sstanf/node_dev
 docker rmi sstanf/subsurface
@@ -44,4 +45,5 @@ docker build --rm --network host -t sstanf/neovimgtk $HOME/dockers/neovimgtk/
 docker build --rm --network host -t sstanf/libreoffice $HOME/dockers/libreoffice/
 docker build --rm --network host -t sstanf/node_dev $HOME/dockers/node_dev/
 docker build --rm --network host -t sstanf/vscode $HOME/dockers/vscode/
+docker build --rm --network host -t sstanf/xon_devel $HOME/dockers/xon_devel/
 #docker build --rm --network host -t sstanf/flutter_website $HOME/dockers/flutter_website/
