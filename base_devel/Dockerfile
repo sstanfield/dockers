@@ -2,7 +2,7 @@ FROM sstanf/jdk8
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
 RUN pacman --noconfirm -Suy && \
-    pacman --noconfirm -S git base-devel dart python ruby cmake libx11 libjpeg-turbo libpng freetype2 maven gradle openssh clang mesa xorg-xrandr xorg-server-devel libxinerama libxcursor glu xsel go go-tools musl tk kak-lsp && \
+    pacman --noconfirm -S git base-devel dart python ruby cmake libx11 libjpeg-turbo libpng freetype2 maven gradle openssh clang mesa xorg-xrandr xorg-server-devel libxinerama libxcursor glu xsel go go-tools musl tk kak-lsp ripgrep fd bat jq && \
     rm -f /var/cache/pacman/pkg/*
 
 

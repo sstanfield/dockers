@@ -1,5 +1,5 @@
 #!/bin/bash
-r
+
 # Set up PulseAudio Cookie if missing
 if [ x"$(pax11publish -d)" = x ]; then
 	start-pulseaudio-x11
