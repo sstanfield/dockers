@@ -7,6 +7,7 @@ docker rmi sstanf/node_dev
 docker rmi sstanf/subsurface
 docker rmi sstanf/firefox
 #docker rmi sstanf/firefox_dev
+docker rmi sstanf/chromium_sstanf
 docker rmi sstanf/chromium
 #docker rmi sstanf/eucleo
 docker rmi sstanf/browsers
@@ -29,6 +30,7 @@ cd $HOME/dockers
 docker build --rm --network host -t sstanf/archlinux $HOME/dockers/archlinux/
 docker build --rm --network host -t sstanf/browsers $HOME/dockers/browsers/
 docker build --rm --network host -t sstanf/chromium $HOME/dockers/chromium/
+docker build --rm --network host -t sstanf/chromium_sstanf $HOME/dockers/chromium_sstanf/
 docker build --rm --network host -t sstanf/firefox $HOME/dockers/firefox/
 #docker build --rm --network host -t sstanf/eucleo $HOME/dockers/eucleo/
 #docker build --rm --network host -t sstanf/firefox_dev $HOME/dockers/firefox_dev/
