@@ -26,13 +26,9 @@ RUN mkdir /sdk && \
     #echo -e "spawn /sdk/tools/bin/sdkmanager --verbose \"extras;google;m2repository\"\nexpect \"Accept? (y/N):\" {send \"y\\\\r\\\\n\"}\ninteract\nwait" > /loadsdk && \
     #expect /loadsdk && \
     /sdk/tools/bin/sdkmanager --verbose "build-tools;28.0.3" && \
-    /sdk/tools/bin/sdkmanager --verbose "build-tools;27.0.3" && \
     /sdk/tools/bin/sdkmanager --verbose "patcher;v4" && \
     /sdk/tools/bin/sdkmanager --verbose "platform-tools" && \
-    /sdk/tools/bin/sdkmanager --verbose "platforms;android-28" && \
-    /sdk/tools/bin/sdkmanager --verbose "platforms;android-27" && \
-    /sdk/tools/bin/sdkmanager --verbose "platforms;android-26" && \
-    /sdk/tools/bin/sdkmanager --verbose "platforms;android-25" && \
+    /sdk/tools/bin/sdkmanager --verbose "platforms;android-29" && \
     /sdk/tools/bin/sdkmanager --verbose "tools" && \
     /sdk/tools/bin/sdkmanager --verbose "extras;android;m2repository" && \
     /sdk/tools/bin/sdkmanager --verbose "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2" && \
@@ -44,3 +40,7 @@ ENV LANG en-US
 #RUN groupadd -g 1000 -r sstanf && useradd -u 1000 -r -g sstanf sstanf \
 #&& mkdir -p /home/sstanf && chown -R sstanf:sstanf /home/sstanf
 
+    #/sdk/tools/bin/sdkmanager --verbose "platforms;android-28" && \
+    #/sdk/tools/bin/sdkmanager --verbose "platforms;android-27" && \
+    #/sdk/tools/bin/sdkmanager --verbose "platforms;android-26" && \
+    #/sdk/tools/bin/sdkmanager --verbose "platforms;android-25" && \
