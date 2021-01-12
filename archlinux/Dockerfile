@@ -1,10 +1,10 @@
-FROM archlinux/base
+FROM archlinux
 LABEL maintainer "Steven Stanfield <sls@scarecrowtech.com>"
 
 COPY mirrorlist /etc/pacman.d/
 
 RUN pacman --noconfirm -Suy && \
-    pacman --noconfirm -S sed which grep tmux neovim kakoune && \
+    pacman --noconfirm -S sed which grep tmux neovim kakoune rsync && \
     rm -f /var/cache/pacman/pkg/*
 
 RUN echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && \
