@@ -1,0 +1,13 @@
+'(
+  ("archlinux" . nil)
+  ("sstanf/archlinux" . "archlinux")
+  ("sstanf/browsers" . "browsers")
+  ("sstanf/chromium" . "chromium")
+  ("sstanf/chromium_sstanf" . "chromium_sstanf")
+  ("sstanf/firefox" . "firefox")
+  ("sstanf/subsurface" . "subsurface")
+  ("sstanf/base_devel" . "base_devel")
+  ("sstanf/android" . "android")
+  ("sstanf/intelliJ" . "intelliJ")
+  ("sstanf/xon_devel" . "xon_devel")
+)
