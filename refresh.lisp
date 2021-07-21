@@ -1,7 +1,8 @@
 (ns-import 'iterator)
+(ns-import 'shell)
 
 (let* ((images (list))
-       (log-file "refresh-$(date +%D-%H-%M).log")
+       (logfile "$(pwd)/refresh-$(date +%m_%d_%Y-%H-%M).log")
        (dockers (load "dockers.list"))
        (mk-image (fn (name dir) $(docker build --rm --network host -t $name $dir)))
        (image? (fn (i) ((fn (images i)
@@ -21,6 +22,10 @@
                                              (println " SUCCEEDED")
                                              (println " FAILED")))))))
 
+  $%(pwd)
+  (println "Refreshing dockers, output logged to: " logfile)
+  $%(touch $logfile)
+  $%(echo "Starting refresh...." >> $logfile)
   (for x in (str-split #\newline $(docker images))
     (if (> (length x) 0)
       (set! images (join (vec-nth (str-split #\space x) 0) images))))
